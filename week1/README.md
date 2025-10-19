@@ -15,26 +15,25 @@ You can clearly see the randomness: sometimes the drug is better than the placeb
 ![Week 1 result plot](/week1/images/plot1.png)
 
 
-## Seminar Explanation
+## Seminar explanation 
+But what if we explain this with a real life exmaple.
 
-But what if we explain this with a real-life example?
+Which chicken feed makes fatter chickens? That was a Mr Roger asking himself. And as an educated farmer he decied to calculate the mean of feed A and feed B to see which one is much better
 
-Which chicken feed makes fatter chickens? That was Mr. Roger asking himself. As an educated farmer, he decided to calculate the mean of feed A and feed B to see which one is much better.
+![](/week1/images/sem1.png)
 
-![Feed comparison data](/week1/images/sem1.png)
+# He got 
+My dfA was 142.95
+My dfB was 135.2627
 
-### Results
-- Feed A mean: 142.95
-- Feed B mean: 135.26
+# Hypothesis image 
+![](/week1/images/sem2.png)
 
-### Hypothesis Testing
-![Hypothesis testing diagram](/week1/images/sem2.png)
+# Nice so basically feed A is a better feed init? Which is the alternative hypothesis 
 
-So basically, feed A is a better feed, right? This represents the alternative hypothesis.
+But if we take two random samples of feed A and calculated their means, they will be different. Why are they different!!
 
-However, if we take two random samples of feed A and calculate their means, they will be different. Why are they different?
+Its called Naturally Occuring Randomness mate. Then how on earth do we know which one is better, we use inferential statistics.
 
-It's called **naturally occurring randomness**. So how on earth do we know which one is better? We use inferential statistics.
-
-### Conclusion
-![Statistical conclusion](/week1/images/sem3.png)
+# Conclusion
+![](/week1/images/sem3.png)
