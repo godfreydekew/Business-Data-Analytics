@@ -76,8 +76,7 @@ mean(c(var(tempSample1), var(tempSample2), var(tempSample3)))
 #some_statistic_theta <- 0 / some_number
 #some_statistic_theta would be equal to ZERO
 
-#For those that haven't done maths in a while. Dividing zero by any
-#number would equal zero. 
+
 
 #We know this won't happen in reality. But we can EXPECT theta to be zero
 
@@ -144,7 +143,7 @@ summary(aov(ANOVA_Data$Data ~ ANOVA_Data$Group))
 #The scaling factor is missing from the calculation. the numerator 
 #requires a critical scaling step to convert the variance of the means 
 #into the actual sum of squares (and then the mean square). We multiply
-#the numerator by the total sample size
+#the numerator by the total sample size(basically called sampling)
 
 #Numerator
 var_means <- var(c(mean(samp1),mean(samp2),mean(samp3))) * 30
@@ -218,13 +217,28 @@ group3 <- iris[iris$Species == "virginica",]$Petal.Length
 
 #TO DO: Build a sampling distribution for n = 50 and k = 3
 #Note. You can scale the numerator right away (multiply by 50)
+print(length(group3))
+var_means <- var(c(mean(group1), mean(group2), mean(group3))) * 50
+means_var <- mean(c(var(group1), var(group2), var(group3)))
+
+f_ratio <- var_means / means_var
 
 #Get the F_value and P-value for those three groups
 
 #Run an ANOVA on Petal.Length ~ Species
+model <- aov(iris$Petal.Length ~ iris$Species)
+summary(model)
+# Results are significant: F(2, 147) = 1180, p < 0.001
 
 #If all went went, the F-statistics and p-values should match
 #There is an effect of Species on Petal Length
 
 #Where is the effect?
 #TukeyHSD + Confidence intervals will show you the effects
+TukeyHSD(model)
+# Indicates that versicolor has a significant larger value than setosa
+# mdiff = 2.798 CI[2.59, 3.00], P < 0.05
+plot(TukeyHSD(model, conf.level=.95), las = 2)
+library(sjPlot)
+fit_plot <- lm(Petal.Length ~ Species, data = iris)
+plot_model(fit_plot, type = "pred")
