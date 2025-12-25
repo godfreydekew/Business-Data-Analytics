@@ -5,7 +5,6 @@ testData <- read.csv("workshop_testData.csv", header = T, stringsAsFactors = TRU
 
 testData$X <- NULL
 trainData$X <- NULL
-# Question 1
 full_model <- glm(incomebin ~ ., data = trainData, family = "binomial")
 
 fitNull <- glm(incomebin ~ 1, data = trainData, family = "binomial")
